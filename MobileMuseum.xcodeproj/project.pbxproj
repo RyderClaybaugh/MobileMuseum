@@ -10,12 +10,10 @@
 		9707D2BE29B8F29100BDA91E /* MobileMuseumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9707D2BD29B8F29100BDA91E /* MobileMuseumApp.swift */; };
 		9707D2C229B8F29500BDA91E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9707D2C129B8F29500BDA91E /* Assets.xcassets */; };
 		9707D2C529B8F29500BDA91E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9707D2C429B8F29500BDA91E /* Preview Assets.xcassets */; };
-		9750375B29B8F96800E54398 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9750375A29B8F96800E54398 /* ContentView.swift */; };
 		9750375D29BB7C0300E54398 /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9750375C29BB7C0300E54398 /* Objects.swift */; };
 		9750375F29BB7D1600E54398 /* ObjectsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9750375E29BB7D1600E54398 /* ObjectsController.swift */; };
 		9750376129BB817B00E54398 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9750376029BB817B00E54398 /* Object.swift */; };
-		9750378129C36CCC00E54398 /* SearchParametersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9750378029C36CCC00E54398 /* SearchParametersView.swift */; };
-		9750378329C8AA9A00E54398 /* ObjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9750378229C8AA9A00E54398 /* ObjectDetailView.swift */; };
+		97CAE13529D4A14500C0E6E0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CAE13429D4A14500C0E6E0 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,12 +21,10 @@
 		9707D2BD29B8F29100BDA91E /* MobileMuseumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileMuseumApp.swift; sourceTree = "<group>"; };
 		9707D2C129B8F29500BDA91E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9707D2C429B8F29500BDA91E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9750375A29B8F96800E54398 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9750375C29BB7C0300E54398 /* Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
 		9750375E29BB7D1600E54398 /* ObjectsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsController.swift; sourceTree = "<group>"; };
 		9750376029BB817B00E54398 /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
-		9750378029C36CCC00E54398 /* SearchParametersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchParametersView.swift; sourceTree = "<group>"; };
-		9750378229C8AA9A00E54398 /* ObjectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetailView.swift; sourceTree = "<group>"; };
+		97CAE13429D4A14500C0E6E0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +41,6 @@
 		9707D2B129B8F29100BDA91E = {
 			isa = PBXGroup;
 			children = (
-				9750378229C8AA9A00E54398 /* ObjectDetailView.swift */,
 				9707D2BC29B8F29100BDA91E /* MobileMuseum */,
 				9707D2BB29B8F29100BDA91E /* Products */,
 			);
@@ -63,9 +58,8 @@
 			isa = PBXGroup;
 			children = (
 				9707D2BD29B8F29100BDA91E /* MobileMuseumApp.swift */,
-				9750375A29B8F96800E54398 /* ContentView.swift */,
-				9750378029C36CCC00E54398 /* SearchParametersView.swift */,
 				9750375C29BB7C0300E54398 /* Objects.swift */,
+				97CAE13429D4A14500C0E6E0 /* ContentView.swift */,
 				9750376029BB817B00E54398 /* Object.swift */,
 				9750375E29BB7D1600E54398 /* ObjectsController.swift */,
 				9707D2C129B8F29500BDA91E /* Assets.xcassets */,
@@ -153,11 +147,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9750376129BB817B00E54398 /* Object.swift in Sources */,
+				97CAE13529D4A14500C0E6E0 /* ContentView.swift in Sources */,
 				9750375F29BB7D1600E54398 /* ObjectsController.swift in Sources */,
-				9750378129C36CCC00E54398 /* SearchParametersView.swift in Sources */,
-				9750375B29B8F96800E54398 /* ContentView.swift in Sources */,
 				9750375D29BB7C0300E54398 /* Objects.swift in Sources */,
-				9750378329C8AA9A00E54398 /* ObjectDetailView.swift in Sources */,
 				9707D2BE29B8F29100BDA91E /* MobileMuseumApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

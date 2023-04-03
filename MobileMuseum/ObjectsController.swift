@@ -79,27 +79,3 @@ func getObjectInfo(objectId: Int, completion: @escaping (Result<Object, Error>) 
         }
     }.resume()
 }
-
-//enum ImageError: Error, LocalizedError {
-//    case itemNotFound
-//    case imageDataMissing
-//}
-//
-//func fetchImage(from url: URL) async throws -> Image {
-//    var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true)
-//    urlComponents?.scheme = "https"
-//    
-//    let (data, response) = try await URLSession.shared.data(from: urlComponents!.url!)
-//    
-//    guard let httpResponse = response as? HTTPURLResponse,
-//          httpResponse.statusCode == 200 else {
-//        throw ImageError.imageDataMissing
-//    }
-//    
-//    guard let image = UIImage(data: data) else {
-//        throw ImageError.imageDataMissing
-//    }
-//    print("fetched image")
-//    return image
-//}
-

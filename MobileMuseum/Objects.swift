@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 struct Objects: Codable, Identifiable {
     var total: Int
     var id: [Int]

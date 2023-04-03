@@ -18,7 +18,7 @@ struct ContentView: View {
     @State private var showLoadButton = false
     
     @State private var search = ""
-    @State private var searchParametersView = false // set to false after done with Search Params
+    @State private var searchParametersView = false
     @State private var navTitle = ""
     @State private var noResults = ""
     @State private var currentIndex = 0
@@ -28,7 +28,6 @@ struct ContentView: View {
     
     @State private var objectDetailText = ""
     let detailScrollViewColor = Color(red: 242/255, green: 242/255, blue: 247/255)
-//    let detailScrollViewColor = Color(red: 235/255, green: 80/255, blue: 58/255)
     let myColor = Color(red: 0.5, green: 0.75, blue: 1.0)
     
     // Search Parameters
@@ -170,7 +169,6 @@ struct ContentView: View {
 // MARK: Search Functionality
                         TextField("        EX. Helmet, Chair, Pottery", text: $search)
                             .font(.custom("Hoefler Text", size: 18))
-//                            .padding(.vertical, 5)
                             .onSubmit {
                                 objects.id.removeAll()
                                 objects.total = 0
@@ -319,8 +317,9 @@ struct ContentView: View {
                         }
                     }
                     .listRowBackground(Color.clear)
+                    
                     Section {
-                        List(object/*.prefix(loadAmount)*/, id: \.objectID) { object in
+                        List(object, id: \.objectID) { object in
                             VStack(alignment: .center) {
 // MARK: Detail View
                                 NavigationLink {
@@ -398,7 +397,6 @@ struct ContentView: View {
                                             .padding()
                                             .background(detailScrollViewColor)
                                             .clipShape(RoundedRectangle(cornerRadius: 5, style: .continuous))
-//                                            .frame(width: 250, alignment: .center)
                                             .padding(10)
                                         }
                                 } label: {
@@ -441,6 +439,7 @@ struct ContentView: View {
                                 }
                             }
                         }
+                        
 // MARK: Load More Button
                         if showLoadButton == true {
                             Button("Load More") {
@@ -476,8 +475,6 @@ struct ContentView: View {
                         Picker(selection: $departmentPickerSelection, label: Text("Department").font(.custom("Al Nile Bold", size: 18))) {
                             ForEach(departments, id: \.self) {
                                 Text($0)
-                                // this doesn't work some reason
-                                    .font(.custom("Hoefler Text", size: 18))
                             }
                         }
                         Picker(selection: $dateAndEraPickerSelection, label: Text("Date/Era").font(.custom("Al Nile Bold", size: 18))) {
@@ -511,21 +508,16 @@ struct ContentView: View {
                     .listRowBackground(Color.clear)
                     Section {
                     Label: do {
-                        if departmentPickerSelection == "Unspecified" {
-                            Image("The Met")
-                                .resizable()
-                                .scaledToFit()
-                                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                        } else {
-                            Image(departmentPickerSelection) // Tweak image for Libraries
+                            Image(departmentPickerSelection)
                                 .resizable()
                                 .scaledToFit()
                                 .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                                 .padding(.bottom, 30)
-                        }
+                                .animation(.easeInOut)
                     }
                         if departmentPickerSelection == "Unspecified" {
                             Text("")
+                                .animation(.easeInOut)
                         } else if departmentPickerSelection == "The American Wing" {
                             Text("The Metropolitan Museum of Art is situated in Lenapehoking, homeland of the Lenape diaspora, and historically a gathering and trading place for many diverse Native Peoples, who continue to live and work on this island. We respectfully acknowledge and honor all Indigenous communities—past, present, and future—for their ongoing and fundamental relationships to the region.")
                                 .font(.custom("Hoefler Text", size: 18))
@@ -670,7 +662,6 @@ struct ContentView: View {
     } // body some view end
 } // struct content view end
 
-
 func loadMore(_ loadAmount: inout Int) {
     loadAmount += 10
 }
@@ -684,32 +675,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
-//    let geographicLocation = ["Aegean Islands", "Africa", "Al Lisht", "Amarna", "Amsterdam", "Antwerp", "Asia", "Augsburg", "Austria", "Bavaria", "Belgium", "Berlin", "Birmingham", "Bohemia", "Boston", "Brussels", "Canada", "Chelsea", "China", "Ctesiphon", "Cyclades", "Cyprus", "Czech Republic", "Democratic Republic of the Congo", "Denmark", "East Sepik", "Egypt", "England", "Europe", "Flanders", "Florence", "France", "Germany", "Greece", "Hasanlu", "Hungary", "India", "Indonesia", "Iran", "Iraq", "Irian Jaya", "Italy", "Japan", "Java", "Khurasan", "Korea", "Leipzig", "Lombardy", "London", "Mali", "Massachussets", "Meissen", "Mersa Mutruh", "Mexico", "Minoa", "Murano", "Naples", "Netherlands", "New York", "Nigeria", "Nishapur", "North and Central America", "Nuremburg", "Oceania", "Pakistan", "Papua New Guinea", "Paris", "Peloponnese", "Pennsylvania", "Peru", "Philadelphia", "Republic of Ireland", "Roman Empire", "Rome", "Russia", "Saqqara", "Saxony", "Scottish", "Sepik", "Sevres", "South America", "Spain", "Staffordshire", "Sweden", "Switzerland", "Syria", "Thailand", "Thebes", "Tibet", "Turkey", "Tuscany", "United Kingdom", "United States", "Upper Egypt", "Venice", "Vienna", "West Midlands", "Worcester", "Worcestershire"]
-
-/*
- fetchObjects(searchTerm: "", departmentId: "", completion: { result in
- switch result {
- case .success(let objects):
- self.objects = objects
- print("Success")
- print(objects.id)
- case .failure(let error):
- print(error)
- }
- })
- DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
- for objectId in objects.id {
- print(objectId)
- getObjectInfo(objectId: objectId, completion: { result in
- switch result {
- case .success(let object):
- self.object.append(object)
- print("Success 2")
- case .failure(let error):
- print(error)
- }
- })
- }
- }
- */
